@@ -1,5 +1,5 @@
 from functools import reduce
-from operator import add
+from operator_demo import add
 
 if __name__ == '__main__':
     print(reduce(add, range(100)))

@@ -1,5 +1,7 @@
 from inspect import signature
-def clip(text, maxlen=80):
+
+
+def clip(text: str, maxlen:'int > 0'=80)-> str:
     """Return text clipped at the last space before or after max_len"""
     end = None
     if len(text) > maxlen:
@@ -24,3 +26,5 @@ if __name__ == '__main__':
     sig = signature(clip)
     for name, param in sig.parameters.items():
         print(param.kind, ':', name, '=', param.default)
+
+    print(repr(clip.__annotations__))
